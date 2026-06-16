@@ -1,0 +1,96 @@
+/* ============================================
+   THEME: DRAGON 🐉 — Masculine Theme 2
+   Target: Ambitious, career-focused men (25-45)
+   Vibe: Regal, powerful, sophisticated, wise
+   Inspiration: Chinese dragon (power, luck, nobility),
+   deep imperial greens and golds
+   ============================================ */
+
+:root[data-theme="dragon"] {
+  /* ---- Brand Colors ---- */
+  --color-primary: #1B7E5A;
+  --color-primary-hover: #219E6D;
+  --color-primary-light: rgba(27, 126, 90, 0.12);
+  --color-primary-dark: #0F5E40;
+
+  --color-secondary: #D4A017;
+  --color-secondary-hover: #E8B830;
+  --color-secondary-light: rgba(212, 160, 23, 0.12);
+
+  --color-accent: #FFB703;
+  --color-accent-hover: #FBAF00;
+  --color-accent-light: rgba(255, 183, 3, 0.12);
+
+  /* ---- Backgrounds ---- */
+  --bg-primary: #0C1821;
+  --bg-secondary: #1B2838;
+  --bg-tertiary: #2D3A4A;
+  --bg-card: #1B2838;
+  --bg-card-hover: #223244;
+  --bg-input: rgba(45, 58, 74, 0.6);
+  --bg-modal-overlay: rgba(8, 16, 24, 0.85);
+
+  /* ---- Text ---- */
+  --text-primary: #F5F0E8;
+  --text-secondary: #C4BBAF;
+  --text-tertiary: #8A7F73;
+  --text-inverse: #0C1821;
+  --text-on-primary: #FFFFFF;
+
+  /* ---- Borders ---- */
+  --border-color: rgba(212, 160, 23, 0.2);
+  --border-color-hover: rgba(212, 160, 23, 0.4);
+  --border-color-light: rgba(196, 187, 175, 0.1);
+
+  /* ---- Shadows ---- */
+  --shadow-card: 0 4px 20px rgba(0, 0, 0, 0.5);
+  --shadow-button: 0 4px 12px rgba(27, 126, 90, 0.3);
+  --shadow-elevated: 0 8px 32px rgba(0, 0, 0, 0.6);
+
+  /* ---- Status Colors ---- */
+  --color-success: #1B7E5A;
+  --color-warning: #D4A017;
+  --color-error: #A83232;
+  --color-info: #457B9D;
+
+  /* ---- Special ---- */
+  --gradient-primary: linear-gradient(135deg, #1B7E5A, #219E6D);
+  --gradient-hero: linear-gradient(135deg, #0C1821, #1B2838, #2D3A4A);
+  --gradient-card-accent: linear-gradient(180deg, rgba(212, 160, 23, 0.06), transparent);
+  --glow-primary: 0 0 20px rgba(27, 126, 90, 0.3);
+
+  /* ---- Component Overrides ---- */
+  --avatar-border: 2px solid #D4A017;
+  --badge-primary-bg: rgba(27, 126, 90, 0.2);
+  --badge-primary-text: #1B7E5A;
+  --nav-active: #D4A017;
+  --nav-inactive: rgba(196, 187, 175, 0.4);
+  --nav-bg: #1B2838;
+  --btn-primary-bg: linear-gradient(135deg, #1B7E5A, #0F5E40);
+  --btn-primary-text: #F5F0E8;
+  --btn-secondary-bg: transparent;
+  --btn-secondary-border: 1px solid rgba(212, 160, 23, 0.4);
+  --input-focus-ring: 0 0 0 2px rgba(27, 126, 90, 0.3);
+  --match-card-border: 1px solid rgba(212, 160, 23, 0.15);
+  --compatibility-bar-bg: rgba(45, 58, 74, 0.5);
+  --compatibility-bar-fill: linear-gradient(90deg, #1B7E5A, #D4A017);
+}
+
+/* Dragon-specific dark mode overrides */
+[data-theme="dragon"][data-color-scheme="dark"] {
+  --bg-primary: #060E14;
+  --bg-secondary: #0C1821;
+  --bg-tertiary: #1B2838;
+}
+
+/* Dragon scale pattern */
+.theme-dragon .pattern-scales {
+  background: radial-gradient(
+    circle at 50% 50%,
+    transparent 3px,
+    rgba(27, 126, 90, 0.03) 3px,
+    rgba(27, 126, 90, 0.03) 5px,
+    transparent 5px
+  );
+  background-size: 16px 16px;
+}

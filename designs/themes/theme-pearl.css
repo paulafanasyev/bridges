@@ -1,0 +1,104 @@
+/* ============================================
+   THEME: PEARL 🦪 — Feminine Theme 3
+   Target: Confident, successful women (28-45)
+   Vibe: Luxurious, elegant, timeless, refined
+   Inspiration: Pearl (wisdom, beauty, rarity),
+   creamy whites, deep navy, rose gold accents
+   ============================================ */
+
+:root[data-theme="pearl"] {
+  /* ---- Brand Colors ---- */
+  --color-primary: #B88A6E;
+  --color-primary-hover: #D0A88E;
+  --color-primary-light: rgba(184, 138, 110, 0.12);
+  --color-primary-dark: #9A7056;
+
+  --color-secondary: #1B365D;
+  --color-secondary-hover: #264773;
+  --color-secondary-light: rgba(27, 54, 93, 0.12);
+
+  --color-accent: #D4AF37;
+  --color-accent-hover: #E0C04A;
+  --color-accent-light: rgba(212, 175, 55, 0.12);
+
+  /* ---- Backgrounds ---- */
+  --bg-primary: #FAF8F5;
+  --bg-secondary: #FFFCF8;
+  --bg-tertiary: #F5F0EB;
+  --bg-card: rgba(255, 255, 255, 0.88);
+  --bg-card-hover: rgba(255, 255, 255, 0.96);
+  --bg-input: rgba(245, 240, 235, 0.7);
+  --bg-modal-overlay: rgba(27, 54, 93, 0.4);
+
+  /* ---- Text ---- */
+  --text-primary: #1B1B2F;
+  --text-secondary: #5C5C6E;
+  --text-tertiary: #9A9AAA;
+  --text-inverse: #FAF8F5;
+  --text-on-primary: #FAF8F5;
+
+  /* ---- Borders ---- */
+  --border-color: rgba(184, 138, 110, 0.18);
+  --border-color-hover: rgba(184, 138, 110, 0.32);
+  --border-color-light: rgba(154, 154, 170, 0.12);
+
+  /* ---- Shadows ---- */
+  --shadow-card: 0 4px 20px rgba(27, 54, 93, 0.06);
+  --shadow-button: 0 4px 12px rgba(184, 138, 110, 0.2);
+  --shadow-elevated: 0 8px 32px rgba(27, 54, 93, 0.08);
+
+  /* ---- Status Colors ---- */
+  --color-success: #B88A6E;
+  --color-warning: #D4AF37;
+  --color-error: #C06050;
+  --color-info: #6E8DB8;
+
+  /* ---- Special ---- */
+  --gradient-primary: linear-gradient(135deg, #B88A6E, #D0A88E);
+  --gradient-hero: linear-gradient(180deg, #FAF8F5, #F5F0EB);
+  --gradient-card-accent: linear-gradient(180deg, rgba(184, 138, 110, 0.05), transparent);
+  --glow-primary: 0 0 20px rgba(184, 138, 110, 0.12);
+  --gradient-rose-gold: linear-gradient(135deg, #B88A6E, #D4AF37);
+
+  /* ---- Component Overrides ---- */
+  --avatar-border: 2px solid #B88A6E;
+  --badge-primary-bg: rgba(184, 138, 110, 0.12);
+  --badge-primary-text: #B88A6E;
+  --nav-active: #B88A6E;
+  --nav-inactive: rgba(92, 92, 110, 0.35);
+  --nav-bg: rgba(255, 252, 248, 0.92);
+  --btn-primary-bg: linear-gradient(135deg, #1B365D, #264773);
+  --btn-primary-text: #FAF8F5;
+  --btn-secondary-bg: transparent;
+  --btn-secondary-border: 1px solid rgba(184, 138, 110, 0.3);
+  --input-focus-ring: 0 0 0 2px rgba(212, 175, 55, 0.2);
+  --match-card-border: 1px solid rgba(184, 138, 110, 0.12);
+  --compatibility-bar-bg: rgba(245, 240, 235, 0.6);
+  --compatibility-bar-fill: linear-gradient(90deg, #B88A6E, #D4AF37);
+}
+
+/* Pearl-specific dark mode overrides */
+[data-theme="pearl"][data-color-scheme="dark"] {
+  --bg-primary: #1A1A2E;
+  --bg-secondary: #2A2A3E;
+  --bg-tertiary: #3A3A4E;
+  --bg-card: rgba(42, 42, 62, 0.85);
+  --bg-card-hover: rgba(58, 58, 78, 0.9);
+  --text-primary: #FAF8F5;
+  --text-secondary: #C0C0D0;
+  --text-tertiary: #8A8A9A;
+  --bg-input: rgba(58, 58, 78, 0.6);
+  --border-color: rgba(184, 138, 110, 0.12);
+  --shadow-card: 0 4px 20px rgba(0, 0, 0, 0.3);
+  --nav-bg: rgba(26, 26, 46, 0.95);
+}
+
+/* Pearl shimmer pattern */
+.theme-pearl .pattern-shimmer {
+  background: linear-gradient(
+    135deg,
+    transparent 30%,
+    rgba(212, 175, 55, 0.03) 50%,
+    transparent 70%
+  );
+}

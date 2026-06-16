@@ -1,0 +1,15 @@
+{
+  "name": "双心 Bridge | Два Сердца",
+  "short_name": "双心 Bridge",
+  "description": "Мост между Китаем и Россией — знакомства и голосовой перевод",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0f0f1a",
+  "theme_color": "#1a1a2e",
+  "orientation": "portrait",
+  "lang": "ru",
+  "categories": ["social", "communication", "lifestyle"],
+  "icons": [
+    { "src": "/brand-logo.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable" }
+  ]
+}

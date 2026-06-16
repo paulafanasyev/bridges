@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 640" width="360" height="640">
+  <defs>
+    <linearGradient id="loginBg" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#F1FAEE;stop-opacity:1"/>
+      <stop offset="100%" style="stop-color:#E8F0F0;stop-opacity:1"/>
+    </linearGradient>
+    <linearGradient id="loginBtn" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#E63946;stop-opacity:1"/>
+      <stop offset="100%" style="stop-color:#D90429;stop-opacity:1"/>
+    </linearGradient>
+    <linearGradient id="loginVk" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#4A76A8;stop-opacity:1"/>
+      <stop offset="100%" style="stop-color:#3A6698;stop-opacity:1"/>
+    </linearGradient>
+    <linearGradient id="loginWechat" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#07C160;stop-opacity:1"/>
+      <stop offset="100%" style="stop-color:#06AD56;stop-opacity:1"/>
+    </linearGradient>
+  </defs>
+  <rect width="360" height="640" fill="url(#loginBg)"/>
+  <rect x="0" y="0" width="360" height="44" fill="#E63946" opacity="0.05"/>
+  <text x="20" y="30" fill="#6C757D" font-family="Inter, sans-serif" font-size="12">9:41</text>
+  <!-- Back button -->
+  <text x="24" y="72" font-family="Arial" font-size="20" fill="#1D3557" opacity="0.6">←</text>
+  <!-- Logo small -->
+  <text x="180" y="80" font-family="Arial" font-size="28" fill="#E63946" text-anchor="middle" opacity="0.7">♥</text>
+  <text x="180" y="96" fill="#1D3557" font-family="Inter, sans-serif" font-size="11" text-anchor="middle" opacity="0.4">双心 Bridge</text>
+  <!-- Title -->
+  <text x="36" y="140" fill="#1D3557" font-family="Inter, sans-serif" font-size="24" font-weight="700">Добро пожаловать</text>
+  <text x="36" y="166" fill="#6C757D" font-family="Inter, sans-serif" font-size="13">Войдите или создайте аккаунт</text>
+  <!-- Tab selector -->
+  <rect x="36" y="186" width="140" height="36" rx="18" fill="#E63946"/>
+  <text x="106" y="210" fill="#FFFFFF" font-family="Inter, sans-serif" font-size="13" font-weight="600" text-anchor="middle">Войти</text>
+  <text x="210" y="210" fill="#6C757D" font-family="Inter, sans-serif" font-size="13" text-anchor="middle">Регистрация</text>
+  <!-- Phone input -->
+  <text x="36" y="250" fill="#6C757D" font-family="Inter, sans-serif" font-size="11">Номер телефона</text>
+  <rect x="36" y="262" width="288" height="48" rx="14" fill="white" stroke="#E63946" stroke-width="1.5" stroke-opacity="0.2"/>
+  <text x="52" y="282" fill="#1D3557" font-family="Inter, sans-serif" font-size="13">+7</text>
+  <rect x="72" y="268" width="1" height="28" fill="#DEE2E6"/>
+  <text x="86" y="282" fill="#212529" font-family="Inter, sans-serif" font-size="14" opacity="0.3">(999) 123-45-67</text>
+  <!-- Password input -->
+  <text x="36" y="332" fill="#6C757D" font-family="Inter, sans-serif" font-size="11">Пароль</text>
+  <rect x="36" y="344" width="288" height="48" rx="14" fill="white" stroke="#DEE2E6" stroke-width="1"/>
+  <text x="52" y="364" fill="#212529" font-family="Inter, sans-serif" font-size="14" opacity="0.3">··········</text>
+  <text x="300" y="364" font-family="Arial" font-size="14" fill="#6C757D" text-anchor="end">👁</text>
+  <!-- Forgot password -->
+  <text x="300" y="408" fill="#E63946" font-family="Inter, sans-serif" font-size="11" text-anchor="end">Забыли пароль?</text>
+  <!-- Login button -->
+  <rect x="36" y="428" width="288" height="50" rx="25" fill="url(#loginBtn)"/>
+  <text x="180" y="460" fill="#FFFFFF" font-family="Inter, sans-serif" font-size="16" font-weight="600" text-anchor="middle">Войти</text>
+  <!-- Divider -->
+  <line x1="36" y1="506" x2="150" y2="506" stroke="#DEE2E6" stroke-width="1"/>
+  <text x="180" y="510" fill="#6C757D" font-family="Inter, sans-serif" font-size="11" text-anchor="middle">или</text>
+  <line x1="210" y1="506" x2="324" y2="506" stroke="#DEE2E6" stroke-width="1"/>
+  <!-- Social login -->
+  <rect x="36" y="530" width="288" height="40" rx="20" fill="url(#loginVk)"/>
+  <text x="180" y="556" fill="#FFFFFF" font-family="Inter, sans-serif" font-size="13" font-weight="500" text-anchor="middle">Войти через VK</text>
+  <rect x="36" y="578" width="288" height="40" rx="20" fill="url(#loginWechat)"/>
+  <text x="180" y="604" fill="#FFFFFF" font-family="Inter, sans-serif" font-size="13" font-weight="500" text-anchor="middle">微信登录</text>
+</svg>

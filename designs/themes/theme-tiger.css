@@ -1,0 +1,96 @@
+/* ============================================
+   THEME: TIGER 🐯 — Masculine Theme 1
+   Target: Active, confident men (18-35)
+   Vibe: Bold, intense, passionate, modern
+   Inspiration: Chinese tiger symbolism (bravery),
+   red accents, dark sophisticated backgrounds
+   ============================================ */
+
+:root[data-theme="tiger"] {
+  /* ---- Brand Colors ---- */
+  --color-primary: #E94560;
+  --color-primary-hover: #FF6B6B;
+  --color-primary-light: rgba(233, 69, 96, 0.12);
+  --color-primary-dark: #C1121F;
+
+  --color-secondary: #457B9D;
+  --color-secondary-hover: #5A9BBF;
+  --color-secondary-light: rgba(69, 123, 157, 0.12);
+
+  --color-accent: #FFB703;
+  --color-accent-hover: #FBAF00;
+  --color-accent-light: rgba(255, 183, 3, 0.12);
+
+  /* ---- Backgrounds ---- */
+  --bg-primary: #1A1A2E;
+  --bg-secondary: #16213E;
+  --bg-tertiary: #0F3460;
+  --bg-card: #16213E;
+  --bg-card-hover: #1A2744;
+  --bg-input: rgba(15, 52, 96, 0.6);
+  --bg-modal-overlay: rgba(10, 10, 20, 0.8);
+
+  /* ---- Text ---- */
+  --text-primary: #F1FAEE;
+  --text-secondary: #A8DADC;
+  --text-tertiary: #6C757D;
+  --text-inverse: #1A1A2E;
+  --text-on-primary: #FFFFFF;
+
+  /* ---- Borders ---- */
+  --border-color: rgba(233, 69, 96, 0.2);
+  --border-color-hover: rgba(233, 69, 96, 0.4);
+  --border-color-light: rgba(168, 218, 220, 0.1);
+
+  /* ---- Shadows ---- */
+  --shadow-card: 0 4px 20px rgba(0, 0, 0, 0.4);
+  --shadow-button: 0 4px 12px rgba(233, 69, 96, 0.3);
+  --shadow-elevated: 0 8px 32px rgba(0, 0, 0, 0.5);
+
+  /* ---- Status Colors ---- */
+  --color-success: #2A9D8F;
+  --color-warning: #FFB703;
+  --color-error: #E63946;
+  --color-info: #457B9D;
+
+  /* ---- Special ---- */
+  --gradient-primary: linear-gradient(135deg, #E94560, #FF6B6B);
+  --gradient-hero: linear-gradient(135deg, #1A1A2E, #16213E, #0F3460);
+  --gradient-card-accent: linear-gradient(180deg, rgba(233, 69, 96, 0.08), transparent);
+  --glow-primary: 0 0 20px rgba(233, 69, 96, 0.3);
+  --tiger-stripe-opacity: 0.08;
+
+  /* ---- Component Overrides ---- */
+  --avatar-border: 2px solid #E94560;
+  --badge-primary-bg: rgba(233, 69, 96, 0.2);
+  --badge-primary-text: #E94560;
+  --nav-active: #E94560;
+  --nav-inactive: rgba(168, 218, 220, 0.4);
+  --nav-bg: #0F3460;
+  --btn-primary-bg: linear-gradient(135deg, #E94560, #C1121F);
+  --btn-primary-text: #FFFFFF;
+  --btn-secondary-bg: transparent;
+  --btn-secondary-border: 1px solid rgba(233, 69, 96, 0.4);
+  --input-focus-ring: 0 0 0 2px rgba(233, 69, 96, 0.3);
+  --match-card-border: 1px solid rgba(233, 69, 96, 0.15);
+  --compatibility-bar-bg: rgba(15, 52, 96, 0.5);
+  --compatibility-bar-fill: linear-gradient(90deg, #E94560, #FF6B6B);
+}
+
+/* Tiger-specific dark mode overrides */
+[data-theme="tiger"][data-color-scheme="dark"] {
+  --bg-primary: #0D0D1A;
+  --bg-secondary: #1A1A2E;
+  --bg-tertiary: #0F3460;
+}
+
+/* Tiger pattern decorative elements */
+.theme-tiger .pattern-stripes {
+  background: repeating-linear-gradient(
+    45deg,
+    transparent,
+    transparent 20px,
+    rgba(233, 69, 96, 0.03) 20px,
+    rgba(233, 69, 96, 0.03) 22px
+  );
+}

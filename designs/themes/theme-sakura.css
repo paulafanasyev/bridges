@@ -1,0 +1,102 @@
+/* ============================================
+   THEME: SAKURA 🌸 — Feminine Theme 1
+   Target: Romantic, gentle women (18-30)
+   Vibe: Soft, dreamy, romantic, delicate
+   Inspiration: Japanese/Chinese cherry blossoms,
+   soft pinks, gentle whites, spring freshness
+   ============================================ */
+
+:root[data-theme="sakura"] {
+  /* ---- Brand Colors ---- */
+  --color-primary: #F48FB1;
+  --color-primary-hover: #F8B4C8;
+  --color-primary-light: rgba(244, 143, 177, 0.12);
+  --color-primary-dark: #D4739A;
+
+  --color-secondary: #B8A9C9;
+  --color-secondary-hover: #D0C4DD;
+  --color-secondary-light: rgba(184, 169, 201, 0.12);
+
+  --color-accent: #FFD54F;
+  --color-accent-hover: #FFE082;
+  --color-accent-light: rgba(255, 213, 79, 0.12);
+
+  /* ---- Backgrounds ---- */
+  --bg-primary: #FEF6F9;
+  --bg-secondary: #FFF8FB;
+  --bg-tertiary: #FFF0F5;
+  --bg-card: rgba(255, 255, 255, 0.85);
+  --bg-card-hover: rgba(255, 255, 255, 0.95);
+  --bg-input: rgba(255, 240, 245, 0.7);
+  --bg-modal-overlay: rgba(30, 20, 25, 0.5);
+
+  /* ---- Text ---- */
+  --text-primary: #3D2C33;
+  --text-secondary: #7A6B72;
+  --text-tertiary: #B0A0A8;
+  --text-inverse: #FFF8FB;
+  --text-on-primary: #FFFFFF;
+
+  /* ---- Borders ---- */
+  --border-color: rgba(244, 143, 177, 0.15);
+  --border-color-hover: rgba(244, 143, 177, 0.3);
+  --border-color-light: rgba(200, 180, 190, 0.15);
+
+  /* ---- Shadows ---- */
+  --shadow-card: 0 4px 16px rgba(244, 143, 177, 0.1);
+  --shadow-button: 0 4px 12px rgba(244, 143, 177, 0.2);
+  --shadow-elevated: 0 8px 30px rgba(244, 143, 177, 0.12);
+
+  /* ---- Status Colors ---- */
+  --color-success: #81C784;
+  --color-warning: #FFD54F;
+  --color-error: #E57373;
+  --color-info: #90CAF9;
+
+  /* ---- Special ---- */
+  --gradient-primary: linear-gradient(135deg, #F48FB1, #F8B4C8);
+  --gradient-hero: linear-gradient(180deg, #FEF6F9, #FFF0F5);
+  --gradient-card-accent: linear-gradient(180deg, rgba(244, 143, 177, 0.05), transparent);
+  --glow-primary: 0 0 20px rgba(244, 143, 177, 0.15);
+
+  /* ---- Component Overrides ---- */
+  --avatar-border: 2px solid #F48FB1;
+  --badge-primary-bg: rgba(244, 143, 177, 0.15);
+  --badge-primary-text: #F48FB1;
+  --nav-active: #F48FB1;
+  --nav-inactive: rgba(122, 107, 114, 0.35);
+  --nav-bg: rgba(255, 248, 251, 0.9);
+  --btn-primary-bg: linear-gradient(135deg, #F48FB1, #D4739A);
+  --btn-primary-text: #FFFFFF;
+  --btn-secondary-bg: transparent;
+  --btn-secondary-border: 1px solid rgba(244, 143, 177, 0.3);
+  --input-focus-ring: 0 0 0 2px rgba(244, 143, 177, 0.2);
+  --match-card-border: 1px solid rgba(244, 143, 177, 0.12);
+  --compatibility-bar-bg: rgba(255, 240, 245, 0.6);
+  --compatibility-bar-fill: linear-gradient(90deg, #F48FB1, #F8B4C8);
+}
+
+/* Sakura-specific dark mode overrides */
+[data-theme="sakura"][data-color-scheme="dark"] {
+  --bg-primary: #2A1D24;
+  --bg-secondary: #3D2C33;
+  --bg-tertiary: #4A3840;
+  --bg-card: rgba(61, 44, 51, 0.85);
+  --bg-card-hover: rgba(74, 56, 64, 0.9);
+  --text-primary: #FFF0F5;
+  --text-secondary: #D4C0C8;
+  --text-tertiary: #9A8892;
+  --bg-input: rgba(74, 56, 64, 0.6);
+  --border-color: rgba(244, 143, 177, 0.12);
+  --shadow-card: 0 4px 16px rgba(0, 0, 0, 0.3);
+  --nav-bg: rgba(42, 29, 36, 0.95);
+}
+
+/* Sakura petal pattern */
+.theme-sakura .pattern-petals {
+  background: radial-gradient(
+    ellipse at 30% 20%,
+    rgba(244, 143, 177, 0.04) 0%,
+    transparent 50%
+  );
+}

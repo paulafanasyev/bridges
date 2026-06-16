@@ -1,0 +1,98 @@
+/* ============================================
+   THEME: PHOENIX 🔥 — Masculine Theme 3
+   Target: Creative, artistic men (20-40)
+   Vibe: Fiery, transformative, inspired, unique
+   Inspiration: Chinese Phoenix (Fenghuang) — rebirth,
+   fire, creativity; warm amber to violet gradients
+   ============================================ */
+
+:root[data-theme="phoenix"] {
+  /* ---- Brand Colors ---- */
+  --color-primary: #E07A5F;
+  --color-primary-hover: #F09070;
+  --color-primary-light: rgba(224, 122, 95, 0.12);
+  --color-primary-dark: #C06048;
+
+  --color-secondary: #7B4EA6;
+  --color-secondary-hover: #9668C0;
+  --color-secondary-light: rgba(123, 78, 166, 0.12);
+
+  --color-accent: #F4A261;
+  --color-accent-hover: #F8B87A;
+  --color-accent-light: rgba(244, 162, 97, 0.12);
+
+  /* ---- Backgrounds ---- */
+  --bg-primary: #1A1124;
+  --bg-secondary: #2A1B3D;
+  --bg-tertiary: #3D2655;
+  --bg-card: #2A1B3D;
+  --bg-card-hover: #352348;
+  --bg-input: rgba(61, 38, 85, 0.6);
+  --bg-modal-overlay: rgba(16, 10, 24, 0.85);
+
+  /* ---- Text ---- */
+  --text-primary: #FFF8F0;
+  --text-secondary: #E0D0C0;
+  --text-tertiary: #9A8A7A;
+  --text-inverse: #1A1124;
+  --text-on-primary: #FFFFFF;
+
+  /* ---- Borders ---- */
+  --border-color: rgba(224, 122, 95, 0.2);
+  --border-color-hover: rgba(224, 122, 95, 0.4);
+  --border-color-light: rgba(224, 208, 192, 0.1);
+
+  /* ---- Shadows ---- */
+  --shadow-card: 0 4px 20px rgba(0, 0, 0, 0.45);
+  --shadow-button: 0 4px 12px rgba(224, 122, 95, 0.3);
+  --shadow-elevated: 0 8px 32px rgba(0, 0, 0, 0.55);
+
+  /* ---- Status Colors ---- */
+  --color-success: #E07A5F;
+  --color-warning: #F4A261;
+  --color-error: #D64A3A;
+  --color-info: #7B4EA6;
+
+  /* ---- Special ---- */
+  --gradient-primary: linear-gradient(135deg, #E07A5F, #7B4EA6);
+  --gradient-hero: linear-gradient(135deg, #1A1124, #2A1B3D, #3D2655);
+  --gradient-card-accent: linear-gradient(180deg, rgba(224, 122, 95, 0.08), transparent);
+  --glow-primary: 0 0 20px rgba(224, 122, 95, 0.25);
+  --gradient-fire: linear-gradient(135deg, #E07A5F, #F4A261, #FFB703);
+
+  /* ---- Component Overrides ---- */
+  --avatar-border: 2px solid #E07A5F;
+  --badge-primary-bg: rgba(224, 122, 95, 0.2);
+  --badge-primary-text: #E07A5F;
+  --nav-active: #E07A5F;
+  --nav-inactive: rgba(224, 208, 192, 0.35);
+  --nav-bg: #2A1B3D;
+  --btn-primary-bg: linear-gradient(135deg, #E07A5F, #C06048);
+  --btn-primary-text: #FFF8F0;
+  --btn-secondary-bg: transparent;
+  --btn-secondary-border: 1px solid rgba(224, 122, 95, 0.4);
+  --input-focus-ring: 0 0 0 2px rgba(224, 122, 95, 0.3);
+  --match-card-border: 1px solid rgba(123, 78, 166, 0.2);
+  --compatibility-bar-bg: rgba(61, 38, 85, 0.5);
+  --compatibility-bar-fill: linear-gradient(90deg, #E07A5F, #7B4EA6);
+}
+
+/* Phoenix-specific dark mode overrides */
+[data-theme="phoenix"][data-color-scheme="dark"] {
+  --bg-primary: #120A18;
+  --bg-secondary: #1A1124;
+  --bg-tertiary: #2A1B3D;
+}
+
+/* Phoenix flame pattern */
+.theme-phoenix .pattern-flames {
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 8px,
+    rgba(224, 122, 95, 0.02) 8px,
+    rgba(244, 162, 97, 0.03) 10px,
+    transparent 10px,
+    transparent 18px
+  );
+}

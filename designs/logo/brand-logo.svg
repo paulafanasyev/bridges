@@ -1,0 +1,85 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400">
+  <defs>
+    <linearGradient id="heartGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#E63946;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#D90429;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#C1121F;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="bridgeGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#1D3557;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#E63946;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#457B9D;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="ringGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FFB703;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#FB8500;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+
+  <!-- Outer ring - cultural unity -->
+  <circle cx="200" cy="200" r="185" fill="none" stroke="#1D3557" stroke-width="4" opacity="0.15"/>
+  <circle cx="200" cy="200" r="175" fill="none" stroke="url(#ringGrad)" stroke-width="2" opacity="0.3"/>
+
+  <!-- Left side - Chinese influence (Red & Gold) -->
+  <!-- Chinese style ornamental arc -->
+  <path d="M200 80 Q130 80 90 130 Q50 180 60 250" fill="none" stroke="#E63946" stroke-width="3" opacity="0.4"/>
+
+  <!-- Right side - Russian influence (Blue & White) -->
+  <!-- Russian style ornamental arc -->
+  <path d="M200 80 Q270 80 310 130 Q350 180 340 250" fill="none" stroke="#457B9D" stroke-width="3" opacity="0.4"/>
+
+  <!-- Main heart - double heart shape representing dual cultures -->
+  <!-- Left heart (Chinese red) -->
+  <path d="M200 300 
+           C200 300 120 250 100 200 
+           C80 150 100 100 150 100 
+           C180 100 200 130 200 150 
+           C200 130 220 100 250 100 
+           C300 100 320 150 300 200 
+           C280 250 200 300 200 300Z" 
+        fill="url(#heartGrad)" opacity="0.85"/>
+  
+  <!-- Inner heart overlay (smaller, lighter) -->
+  <path d="M200 270 
+           C200 270 140 230 125 195 
+           C110 160 125 125 160 125 
+           C180 125 200 145 200 160 
+           C200 145 220 125 240 125 
+           C275 125 290 160 275 195 
+           C260 230 200 270 200 270Z" 
+        fill="#FFB703" opacity="0.2"/>
+
+  <!-- Bridge connecting - stylized bridge curve -->
+  <path d="M80 280 Q200 230 320 280" fill="none" stroke="url(#bridgeGrad)" stroke-width="4" stroke-linecap="round" opacity="0.7"/>
+  
+  <!-- Small bridge pillars -->
+  <rect x="148" y="255" width="6" height="30" rx="3" fill="#1D3557" opacity="0.6"/>
+  <rect x="245" y="255" width="6" height="30" rx="3" fill="#1D3557" opacity="0.6"/>
+  <rect x="197" y="248" width="6" height="37" rx="3" fill="#E63946" opacity="0.7"/>
+
+  <!-- Chinese knot / symbol at bottom left -->
+  <circle cx="125" cy="310" r="10" fill="none" stroke="#E63946" stroke-width="2"/>
+  <circle cx="125" cy="310" r="5" fill="#E63946" opacity="0.6"/>
+  <line x1="125" y1="295" x2="125" y2="300" stroke="#E63946" stroke-width="2"/>
+  <line x1="125" y1="320" x2="125" y2="325" stroke="#E63946" stroke-width="2"/>
+
+  <!-- Matryoshka / Russian symbol at bottom right -->
+  <ellipse cx="275" cy="315" rx="12" ry="14" fill="none" stroke="#457B9D" stroke-width="2"/>
+  <ellipse cx="275" cy="308" rx="7" ry="5" fill="#457B9D" opacity="0.3"/>
+  <circle cx="275" cy="305" r="4" fill="none" stroke="#457B9D" stroke-width="1.5"/>
+
+  <!-- Small stars - 5 for China -->
+  <circle cx="100" cy="150" r="3" fill="#FFB703" opacity="0.6"/>
+  <circle cx="85" cy="170" r="2" fill="#FFB703" opacity="0.4"/>
+  <circle cx="110" cy="135" r="2" fill="#FFB703" opacity="0.4"/>
+
+  <!-- Small stars for Russia -->
+  <circle cx="300" cy="150" r="3" fill="#A8DADC" opacity="0.6"/>
+  <circle cx="315" cy="170" r="2" fill="#A8DADC" opacity="0.4"/>
+  <circle cx="290" cy="135" r="2" fill="#A8DADC" opacity="0.4"/>
+
+  <!-- Top-dot accents -->
+  <circle cx="200" cy="60" r="6" fill="#E63946" opacity="0.5"/>
+  <circle cx="185" cy="68" r="3" fill="#FFB703" opacity="0.5"/>
+  <circle cx="215" cy="68" r="3" fill="#457B9D" opacity="0.5"/>
+</svg>

@@ -1,0 +1,28 @@
+{
+  "name": "dual-hearts-bridge-frontend",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "description": "双心 Bridge | Два Сердца — Frontend SPA",
+  "scripts": {
+    "dev": "vite --port 3000 --host 0.0.0.0",
+    "build": "tsc -b && vite build",
+    "preview": "vite preview --port 3000 --host 0.0.0.0"
+  },
+  "dependencies": {
+    "@capacitor/android": "^8.4.0",
+    "@capacitor/cli": "^8.4.0",
+    "@capacitor/core": "^8.4.0",
+    "@capacitor/ios": "^8.4.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-router-dom": "^6.28.0"
+  },
+  "devDependencies": {
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.1",
+    "@vitejs/plugin-react": "^4.3.4",
+    "typescript": "^5.6.3",
+    "vite": "^5.4.11"
+  }
+}

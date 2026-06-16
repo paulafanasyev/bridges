@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 640" width="360" height="640">
+  <defs>
+    <linearGradient id="sakuraBg" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#FEF6F9;stop-opacity:1"/>
+      <stop offset="100%" style="stop-color:#FFF0F5;stop-opacity:1"/>
+    </linearGradient>
+    <linearGradient id="sakuraAccent" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#F48FB1;stop-opacity:1"/>
+      <stop offset="100%" style="stop-color:#F8B4C8;stop-opacity:1"/>
+    </linearGradient>
+  </defs>
+  <rect width="360" height="640" fill="url(#sakuraBg)"/>
+  <rect x="0" y="0" width="360" height="44" fill="#F48FB1" opacity="0.08"/>
+  <text x="20" y="30" fill="#7A6B72" font-family="Inter, sans-serif" font-size="12">9:41</text>
+  <!-- Floating petals -->
+  <ellipse cx="60" cy="70" rx="8" ry="6" fill="#F48FB1" opacity="0.15" transform="rotate(-20 60 70)"/>
+  <ellipse cx="310" cy="90" rx="6" ry="4" fill="#F8B4C8" opacity="0.12" transform="rotate(30 310 90)"/>
+  <ellipse cx="280" cy="130" rx="7" ry="5" fill="#FFD54F" opacity="0.1" transform="rotate(-15 280 130)"/>
+  <ellipse cx="50" cy="200" rx="5" ry="3" fill="#F48FB1" opacity="0.1" transform="rotate(25 50 200)"/>
+  <ellipse cx="330" cy="300" rx="6" ry="4" fill="#F8B4C8" opacity="0.08" transform="rotate(-30 330 300)"/>
+  <!-- Header -->
+  <text x="24" y="78" fill="#3D2C33" font-family="Inter, sans-serif" font-size="22" font-weight="700">双心 Bridge</text>
+  <text x="24" y="98" fill="#7A6B72" font-family="Inter, sans-serif" font-size="11">Мост между сердцами</text>
+  <!-- Welcome card -->
+  <rect x="24" y="120" width="312" height="100" rx="20" fill="white" stroke="#F48FB1" stroke-width="1" stroke-opacity="0.2"/>
+  <text x="44" y="152" fill="#3D2C33" font-family="Inter, sans-serif" font-size="18" font-weight="600">Добро пожаловать! 🌸</text>
+  <text x="44" y="175" fill="#7A6B72" font-family="Inter, sans-serif" font-size="12">Заполните анкету и найдите свою</text>
+  <text x="44" y="192" fill="#7A6B72" font-family="Inter, sans-serif" font-size="12">вторую половинку</text>
+  <circle cx="296" cy="170" r="20" fill="#FFF0F5"/>
+  <text x="296" y="176" font-family="Arial" font-size="20" fill="#F48FB1" text-anchor="middle">🌸</text>
+  <!-- Profile creation progress -->
+  <text x="24" y="250" fill="#3D2C33" font-family="Inter, sans-serif" font-size="15" font-weight="600">Создание анкеты</text>
+  <rect x="24" y="264" width="312" height="6" rx="3" fill="#FFF0F5"/>
+  <rect x="24" y="264" width="100" height="6" rx="3" fill="url(#sakuraAccent)"/>
+  <text x="24" y="290" fill="#7A6B72" font-family="Inter, sans-serif" font-size="11">Шаг 2 из 6 — О себе</text>
+  <!-- Form fields -->
+  <rect x="24" y="310" width="312" height="48" rx="14" fill="white" stroke="#F48FB1" stroke-width="1" stroke-opacity="0.15"/>
+  <text x="44" y="332" fill="#7A6B72" font-family="Inter, sans-serif" font-size="11">Имя</text>
+  <text x="44" y="348" fill="#3D2C33" font-family="Inter, sans-serif" font-size="14">Екатерина</text>
+  <rect x="24" y="370" width="312" height="48" rx="14" fill="white" stroke="#F48FB1" stroke-width="1" stroke-opacity="0.15"/>
+  <text x="44" y="392" fill="#7A6B72" font-family="Inter, sans-serif" font-size="11">Дата рождения</text>
+  <text x="44" y="408" fill="#3D2C33" font-family="Inter, sans-serif" font-size="14">15 марта 1998</text>
+  <rect x="24" y="430" width="312" height="48" rx="14" fill="white" stroke="#F48FB1" stroke-width="1" stroke-opacity="0.15"/>
+  <text x="44" y="452" fill="#7A6B72" font-family="Inter, sans-serif" font-size="11">Город</text>
+  <text x="44" y="468" fill="#3D2C33" font-family="Inter, sans-serif" font-size="14">Москва</text>
+  <!-- Zodiac / sign select -->
+  <rect x="24" y="492" width="312" height="48" rx="14" fill="white" stroke="#FFD54F" stroke-width="1" stroke-opacity="0.3"/>
+  <text x="44" y="514" fill="#3D2C33" font-family="Inter, sans-serif" font-size="11">Знак зодиака</text>
+  <text x="44" y="530" fill="#F48FB1" font-family="Inter, sans-serif" font-size="14">Рыбы ♓</text>
+  <!-- Continue button -->
+  <rect x="24" y="560" width="312" height="48" rx="24" fill="url(#sakuraAccent)"/>
+  <text x="180" y="590" fill="#FFFFFF" font-family="Inter, sans-serif" font-size="15" font-weight="600" text-anchor="middle">Продолжить →</text>
+</svg>

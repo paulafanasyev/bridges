@@ -1,0 +1,103 @@
+/* ============================================
+   THEME: LOTUS 🪷 — Feminine Theme 2
+   Target: Elegant, spiritual women (25-40)
+   Vibe: Serene, graceful, mindful, balanced
+   Inspiration: Lotus flower (purity, enlightenment),
+   soft jade greens, warm pinks, zen aesthetics
+   ============================================ */
+
+:root[data-theme="lotus"] {
+  /* ---- Brand Colors ---- */
+  --color-primary: #A8D5BA;
+  --color-primary-hover: #C2E4CE;
+  --color-primary-light: rgba(168, 213, 186, 0.12);
+  --color-primary-dark: #80C0A0;
+
+  --color-secondary: #E8B4C8;
+  --color-secondary-hover: #F0CCDA;
+  --color-secondary-light: rgba(232, 180, 200, 0.12);
+
+  --color-accent: #F0C27A;
+  --color-accent-hover: #F5D49A;
+  --color-accent-light: rgba(240, 194, 122, 0.12);
+
+  /* ---- Backgrounds ---- */
+  --bg-primary: #F7FBF5;
+  --bg-secondary: #FDFFFC;
+  --bg-tertiary: #F0F7ED;
+  --bg-card: rgba(255, 255, 255, 0.85);
+  --bg-card-hover: rgba(255, 255, 255, 0.95);
+  --bg-input: rgba(240, 247, 237, 0.7);
+  --bg-modal-overlay: rgba(30, 40, 30, 0.45);
+
+  /* ---- Text ---- */
+  --text-primary: #2D3D33;
+  --text-secondary: #6B7D72;
+  --text-tertiary: #A0B0A6;
+  --text-inverse: #F7FBF5;
+  --text-on-primary: #2D3D33;
+
+  /* ---- Borders ---- */
+  --border-color: rgba(168, 213, 186, 0.2);
+  --border-color-hover: rgba(168, 213, 186, 0.35);
+  --border-color-light: rgba(160, 176, 166, 0.12);
+
+  /* ---- Shadows ---- */
+  --shadow-card: 0 4px 16px rgba(168, 213, 186, 0.1);
+  --shadow-button: 0 4px 12px rgba(168, 213, 186, 0.2);
+  --shadow-elevated: 0 8px 30px rgba(168, 213, 186, 0.1);
+
+  /* ---- Status Colors ---- */
+  --color-success: #A8D5BA;
+  --color-warning: #F0C27A;
+  --color-error: #D4A0A0;
+  --color-info: #B0C8D8;
+
+  /* ---- Special ---- */
+  --gradient-primary: linear-gradient(135deg, #A8D5BA, #C2E4CE);
+  --gradient-hero: linear-gradient(180deg, #F7FBF5, #F0F7ED);
+  --gradient-card-accent: linear-gradient(180deg, rgba(168, 213, 186, 0.06), transparent);
+  --glow-primary: 0 0 20px rgba(168, 213, 186, 0.15);
+
+  /* ---- Component Overrides ---- */
+  --avatar-border: 2px solid #A8D5BA;
+  --badge-primary-bg: rgba(168, 213, 186, 0.15);
+  --badge-primary-text: #4A8C6A;
+  --nav-active: #A8D5BA;
+  --nav-inactive: rgba(107, 125, 114, 0.35);
+  --nav-bg: rgba(253, 255, 252, 0.9);
+  --btn-primary-bg: linear-gradient(135deg, #A8D5BA, #80C0A0);
+  --btn-primary-text: #2D3D33;
+  --btn-secondary-bg: transparent;
+  --btn-secondary-border: 1px solid rgba(168, 213, 186, 0.3);
+  --input-focus-ring: 0 0 0 2px rgba(168, 213, 186, 0.25);
+  --match-card-border: 1px solid rgba(168, 213, 186, 0.15);
+  --compatibility-bar-bg: rgba(240, 247, 237, 0.6);
+  --compatibility-bar-fill: linear-gradient(90deg, #A8D5BA, #E8B4C8);
+}
+
+/* Lotus-specific dark mode overrides */
+[data-theme="lotus"][data-color-scheme="dark"] {
+  --bg-primary: #1E2D24;
+  --bg-secondary: #2D3D33;
+  --bg-tertiary: #3A4D40;
+  --bg-card: rgba(45, 61, 51, 0.85);
+  --bg-card-hover: rgba(58, 77, 64, 0.9);
+  --text-primary: #F0F7ED;
+  --text-secondary: #C0D0C4;
+  --text-tertiary: #90A096;
+  --bg-input: rgba(58, 77, 64, 0.6);
+  --border-color: rgba(168, 213, 186, 0.12);
+  --shadow-card: 0 4px 16px rgba(0, 0, 0, 0.3);
+  --nav-bg: rgba(30, 45, 36, 0.95);
+  --text-on-primary: #F0F7ED;
+}
+
+/* Lotus zen pattern */
+.theme-lotus .pattern-lotus {
+  background: radial-gradient(
+    ellipse at 50% 30%,
+    rgba(168, 213, 186, 0.04) 0%,
+    transparent 60%
+  );
+}

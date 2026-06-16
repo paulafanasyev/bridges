@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 640" width="360" height="640">
+  <defs>
+    <linearGradient id="callBg" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#0F3460;stop-opacity:1"/>
+      <stop offset="100%" style="stop-color:#1A1A2E;stop-opacity:1"/>
+    </linearGradient>
+    <linearGradient id="callBtn" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#E94560;stop-opacity:1"/>
+      <stop offset="100%" style="stop-color:#C1121F;stop-opacity:1"/>
+    </linearGradient>
+    <linearGradient id="transBubbleR" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#16213E;stop-opacity:1"/>
+      <stop offset="100%" style="stop-color:#1A1A2E;stop-opacity:1"/>
+    </linearGradient>
+    <linearGradient id="transBubbleC" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#1B2838;stop-opacity:1"/>
+      <stop offset="100%" style="stop-color:#0C1821;stop-opacity:1"/>
+    </linearGradient>
+  </defs>
+  <rect width="360" height="640" fill="url(#callBg)"/>
+  <!-- Status bar -->
+  <rect x="0" y="0" width="360" height="44" fill="rgba(0,0,0,0.3)"/>
+  <text x="20" y="30" fill="#A8DADC" font-family="Inter, sans-serif" font-size="12">9:41</text>
+  <text x="330" y="30" fill="#A8DADC" font-family="Inter, sans-serif" font-size="12" text-anchor="end">🔋📶</text>
+  <!-- Call header -->
+  <text x="24" y="72" fill="#A8DADC" font-family="Inter, sans-serif" font-size="12" opacity="0.8">Голосовой звонок с переводом</text>
+  <!-- Avatar -->
+  <circle cx="180" cy="140" r="48" fill="#16213E" stroke="#E94560" stroke-width="2.5"/>
+  <circle cx="180" cy="128" r="20" fill="#E94560" opacity="0.25"/>
+  <path d="M166 162 Q180 172 194 162" fill="none" stroke="#E94560" stroke-width="2.5" stroke-linecap="round" opacity="0.5"/>
+  <!-- Online status -->
+  <circle cx="218" cy="168" r="8" fill="#2A9D8F" stroke="#0F3460" stroke-width="2"/>
+  <!-- Name -->
+  <text x="180" y="210" fill="#F1FAEE" font-family="Inter, sans-serif" font-size="20" font-weight="600" text-anchor="middle">Анна</text>
+  <text x="180" y="230" fill="#A8DADC" font-family="Inter, sans-serif" font-size="11" text-anchor="middle">Москва · 24 года</text>
+  <!-- Call timer -->
+  <rect x="130" y="245" width="100" height="24" rx="12" fill="rgba(233,69,96,0.15)"/>
+  <text x="180" y="262" fill="#E94560" font-family="Inter, sans-serif" font-size="12" font-weight="500" text-anchor="middle">◉ 03:24</text>
+  <!-- Translation bubbles -->
+  <!-- Russian bubble (input) -->
+  <rect x="24" y="290" width="312" height="64" rx="16" fill="url(#transBubbleR)" stroke="#E94560" stroke-width="1" stroke-opacity="0.2"/>
+  <circle cx="48" cy="322" r="12" fill="#E94560" opacity="0.2"/>
+  <text x="48" y="327" font-family="Arial" font-size="11" fill="#E94560" text-anchor="middle">RU</text>
+  <text x="72" y="314" fill="#F1FAEE" font-family="Inter, sans-serif" font-size="14">Привет! Я Анна. Как дела?</text>
+  <text x="72" y="336" fill="#6C757D" font-family="Inter, sans-serif" font-size="10">Сказано Анной · 0:12</text>
+  <!-- Arrow down -->
+  <text x="180" y="370" font-family="Arial" font-size="20" fill="#FFB703" text-anchor="middle">↓</text>
+  <text x="180" y="380" fill="#FFB703" font-family="Inter, sans-serif" font-size="9" text-anchor="middle">Перевод</text>
+  <!-- Chinese bubble (translated output) -->
+  <rect x="24" y="390" width="312" height="64" rx="16" fill="url(#transBubbleC)" stroke="#FFB703" stroke-width="1" stroke-opacity="0.2"/>
+  <circle cx="48" cy="422" r="12" fill="#FFB703" opacity="0.2"/>
+  <text x="48" y="427" font-family="Arial" font-size="11" fill="#FFB703" text-anchor="middle">CN</text>
+  <text x="72" y="414" fill="#F1FAEE" font-family="Inter, sans-serif" font-size="14">你好！我是安娜。你好吗？</text>
+  <text x="72" y="436" fill="#6C757D" font-family="Inter, sans-serif" font-size="10">Переведено автоматически</text>
+  <!-- Listening indicator -->
+  <rect x="140" y="468" width="80" height="22" rx="11" fill="rgba(42,157,143,0.15)"/>
+  <circle cx="155" cy="479" r="4" fill="#2A9D8F">
+    <animate attributeName="opacity" values="1;0.3;1" dur="1.5s" repeatCount="indefinite"/>
+  </circle>
+  <text x="165" y="483" fill="#2A9D8F" font-family="Inter, sans-serif" font-size="10">Слушаю...</text>
+  <!-- Call controls -->
+  <rect x="24" y="510" width="312" height="56" rx="28" fill="rgba(15,52,96,0.6)"/>
+  <!-- Mute -->
+  <circle cx="68" cy="538" r="18" fill="rgba(168,218,220,0.1)"/>
+  <text x="68" y="544" font-family="Arial" font-size="16" fill="#A8DADC" text-anchor="middle">🔇</text>
+  <!-- Mic (active) -->
+  <circle cx="136" cy="538" r="22" fill="#E94560"/>
+  <text x="136" y="544" font-family="Arial" font-size="18" fill="#F1FAEE" text-anchor="middle">🎤</text>
+  <circle cx="136" cy="538" r="26" fill="none" stroke="#E94560" stroke-width="2" opacity="0.4">
+    <animate attributeName="r" values="22;30;22" dur="1.5s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0.4;0.1;0.4" dur="1.5s" repeatCount="indefinite"/>
+  </circle>
+  <!-- End Call -->
+  <circle cx="224" cy="538" r="22" fill="url(#callBtn)"/>
+  <text x="224" y="544" font-family="Arial" font-size="16" fill="#F1FAEE" text-anchor="middle">📞</text>
+  <!-- Speaker -->
+  <circle cx="292" cy="538" r="18" fill="rgba(168,218,220,0.1)"/>
+  <text x="292" y="544" font-family="Arial" font-size="16" fill="#A8DADC" text-anchor="middle">🔊</text>
+  <!-- Bottom hint -->
+  <text x="180" y="600" fill="#6C757D" font-family="Inter, sans-serif" font-size="10" text-anchor="middle">Говорите на родном языке — мы переведём для собеседника</text>
+  <!-- Translation quality indicator -->
+  <text x="180" y="620" fill="#2A9D8F" font-family="Inter, sans-serif" font-size="9" text-anchor="middle">✦ Высокое качество перевода</text>
+</svg>

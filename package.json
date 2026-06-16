@@ -1,0 +1,13 @@
+{
+  "name": "dualhearts-bridge",
+  "version": "1.0.0",
+  "description": "双心 Bridge | Два Сердца — Cross-cultural dating and voice translation platform",
+  "private": true,
+  "scripts": {
+    "start:backend": "cd backend && PORT=3002 node dist/index.js",
+    "start:frontend": "cd frontend && npx vite --port 3000 --host",
+    "build:frontend": "cd frontend && npm run build",
+    "build:apk": "cd frontend/android && ./gradlew assembleDebug",
+    "setup": "cd frontend && npm install && npm run build && npx cap sync android"
+  }
+}
