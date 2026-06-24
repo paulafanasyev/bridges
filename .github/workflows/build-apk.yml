@@ -3,6 +3,8 @@ name: Build APK
 on:
   push:
     branches: [ main ]
+    tags:
+      - 'v*'
   workflow_dispatch:
 
 jobs:
@@ -48,9 +50,19 @@ jobs:
           cd frontend/android
           ./gradlew assembleDebug --no-daemon
       
-      - name: Upload APK
+      - name: Upload APK as Artifact
         uses: actions/upload-artifact@v4
         with:
           name: dualhearts-bridge-apk
           path: frontend/android/app/build/outputs/apk/debug/app-debug.apk
           if-no-files-found: error
+      
+      - name: Create Release
+        if: startsWith(github.ref, 'refs/tags/v')
+        uses: softprops/action-gh-release@v2
+        with:
+          files: frontend/android/app/build/outputs/apk/debug/app-debug.apk
+          body: |
+            ## 双心 Bridge | Два Сердца
+            
+            Скачайте APK и установите на Android.
