@@ -16,3 +16,4 @@ data/
 *.local
 .DS_Store
 uploads/
+*.apk
