@@ -9,11 +9,11 @@ interface LayoutProps {
 
 export default function Layout({ children, showNav = true }: LayoutProps) {
   const { t } = useTranslation();
-  const navigate = useNavigate();
 
   const navItems = [
     { path: '/discover', icon: '🔍', label: t('nav.discover') },
     { path: '/matches', icon: '💕', label: t('nav.matches') },
+    { path: '/premium', icon: '⭐', label: 'Premium' },
     { path: '/profile/me', icon: '👤', label: t('nav.profile') },
     { path: '/settings', icon: '⚙️', label: t('nav.settings') },
   ];

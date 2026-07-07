@@ -15,6 +15,8 @@ import Profile from './pages/Profile';
 import Call from './pages/Call';
 import Settings from './pages/Settings';
 import Matches from './pages/Matches';
+import Admin from './pages/Admin';
+import Premium from './pages/Premium';
 
 function AppRoutes() {
   const { isAuthenticated, isLoading } = useAuth();
@@ -64,6 +66,16 @@ function AppRoutes() {
       <Route
         path="/settings"
         element={isAuthenticated ? <Settings /> : <Navigate to="/login" replace />}
+      />
+
+      {/* New pages */}
+      <Route
+        path="/admin"
+        element={isAuthenticated ? <Admin /> : <Navigate to="/login" replace />}
+      />
+      <Route
+        path="/premium"
+        element={isAuthenticated ? <Premium /> : <Navigate to="/login" replace />}
       />
 
       {/* Fallback */}
