@@ -35,6 +35,8 @@ export function initializeDatabase(): void {
       phone_country_code TEXT DEFAULT '',
       phone_number TEXT DEFAULT '',
       is_premium INTEGER DEFAULT 0,
+      is_admin INTEGER DEFAULT 0,
+      premium_expires_at TEXT,
       is_online INTEGER DEFAULT 0,
       last_seen TEXT,
       created_at TEXT NOT NULL DEFAULT (datetime('now')),
@@ -122,6 +124,71 @@ export function initializeDatabase(): void {
       created_at TEXT NOT NULL DEFAULT (datetime('now')),
       last_activity TEXT NOT NULL DEFAULT (datetime('now')),
       FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
+    );
+
+    CREATE TABLE IF NOT EXISTS payments (
+      id TEXT PRIMARY KEY,
+      user_id TEXT NOT NULL,
+      amount INTEGER NOT NULL,
+      currency TEXT NOT NULL DEFAULT 'CNY',
+      payment_method TEXT CHECK(payment_method IN ('unionpay', 'alipay', 'mir', 'wechat')) NOT NULL,
+      status TEXT CHECK(status IN ('pending', 'processing', 'completed', 'failed', 'refunded')) NOT NULL DEFAULT 'pending',
+      transaction_id TEXT,
+      order_id TEXT UNIQUE NOT NULL,
+      description TEXT DEFAULT '',
+      created_at TEXT NOT NULL DEFAULT (datetime('now')),
+      updated_at TEXT NOT NULL DEFAULT (datetime('now')),
+      FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
+    );
+
+    CREATE TABLE IF NOT EXISTS subscriptions (
+      id TEXT PRIMARY KEY,
+      user_id TEXT NOT NULL,
+      plan_type TEXT CHECK(plan_type IN ('monthly', 'quarterly', 'yearly')) NOT NULL,
+      status TEXT CHECK(status IN ('active', 'cancelled', 'expired', 'trial')) NOT NULL DEFAULT 'active',
+      amount INTEGER NOT NULL,
+      currency TEXT NOT NULL DEFAULT 'CNY',
+      started_at TEXT NOT NULL DEFAULT (datetime('now')),
+      expires_at TEXT NOT NULL,
+      cancelled_at TEXT,
+      payment_method TEXT CHECK(payment_method IN ('unionpay', 'alipay', 'mir', 'wechat')),
+      auto_renew INTEGER DEFAULT 1,
+      created_at TEXT NOT NULL DEFAULT (datetime('now')),
+      updated_at TEXT NOT NULL DEFAULT (datetime('now')),
+      FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
+    );
+
+    CREATE TABLE IF NOT EXISTS coins (
+      id TEXT PRIMARY KEY,
+      user_id TEXT NOT NULL,
+      balance INTEGER NOT NULL DEFAULT 0,
+      total_purchased INTEGER NOT NULL DEFAULT 0,
+      total_spent INTEGER NOT NULL DEFAULT 0,
+      updated_at TEXT NOT NULL DEFAULT (datetime('now')),
+      FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
+    );
+
+    CREATE TABLE IF NOT EXISTS coin_transactions (
+      id TEXT PRIMARY KEY,
+      user_id TEXT NOT NULL,
+      amount INTEGER NOT NULL,
+      type TEXT CHECK(type IN ('purchase', 'gift_sent', 'gift_received', 'bonus', 'refund')) NOT NULL,
+      reference_id TEXT,
+      description TEXT DEFAULT '',
+      created_at TEXT NOT NULL DEFAULT (datetime('now')),
+      FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
+    );
+
+    CREATE TABLE IF NOT EXISTS admin_logs (
+      id TEXT PRIMARY KEY,
+      admin_id TEXT NOT NULL,
+      action TEXT NOT NULL,
+      target_type TEXT,
+      target_id TEXT,
+      details TEXT DEFAULT '{}',
+      ip_address TEXT DEFAULT '',
+      created_at TEXT NOT NULL DEFAULT (datetime('now')),
+      FOREIGN KEY (admin_id) REFERENCES users(id) ON DELETE CASCADE
     );
 
     -- Indexes for performance

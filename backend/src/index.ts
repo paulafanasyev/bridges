@@ -7,12 +7,15 @@ import path from 'path';
 import { WebSocketServer } from 'ws';
 import { initializeDatabase } from './database';
 import { setupWebSocketSignaling } from './websocket/signaling';
+import { sanitizeInput, bruteForceProtection } from './middleware/security';
 import authRoutes from './routes/auth';
 import profileRoutes from './routes/profile';
 import discoverRoutes from './routes/discover';
 import translateRoutes from './routes/translate';
 import messagesRoutes from './routes/messages';
 import callsRoutes from './routes/calls';
+import adminRoutes from './routes/admin';
+import paymentRoutes from './routes/payments';
 
 // Environment
 const PORT = parseInt(process.env.PORT || '3000', 10);
@@ -60,9 +63,26 @@ const authLimiter = rateLimit({
   message: { error: 'Too many authentication attempts, please try again later.' },
 });
 
+// Stricter rate limit for admin endpoints
+const adminLimiter = rateLimit({
+  windowMs: 15 * 60 * 1000,
+  max: 60,
+  standardHeaders: true,
+  legacyHeaders: false,
+  message: { error: 'Too many admin requests, please try again later.' },
+});
+
 // Body parsing
 app.use(express.json({ limit: '1mb' }));
 app.use(express.urlencoded({ extended: true, limit: '1mb' }));
+
+// ─── Security Middleware ────────────────────────────────────────
+
+// Input sanitization for all routes
+app.use('/api', sanitizeInput);
+
+// Brute force protection for auth routes
+app.use('/api/auth', bruteForceProtection);
 
 // ─── Static Files ──────────────────────────────────────────────
 
@@ -98,6 +118,8 @@ app.use('/api/discover', discoverRoutes);
 app.use('/api/translate', translateRoutes);
 app.use('/api/messages', messagesRoutes);
 app.use('/api/call', callsRoutes);
+app.use('/api/admin', adminLimiter, adminRoutes);
+app.use('/api/payments', paymentRoutes);
 app.use('/api', apiLimiter); // Apply general rate limiting to all other API routes
 
 // ─── Error Handling ────────────────────────────────────────────
