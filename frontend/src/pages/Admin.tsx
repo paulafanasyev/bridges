@@ -3,48 +3,43 @@ import Layout from '../components/Layout';
 import { useTranslation } from '../hooks/useTranslation';
 import api from '../services/api';
 
-interface StatCard {
-  label: string;
-  value: string | number;
-  icon: string;
-  change?: string;
-}
-
-interface UserRow {
-  id: string;
-  username: string;
-  email: string;
-  gender: string;
-  language: string;
-  premium: boolean;
-  joined: string;
-}
-
 export default function Admin() {
   const { t } = useTranslation();
-  const { user } = useAuth();
-  const [stats, setStats] = useState<StatCard[]>([
-    { label: t('admin.totalUsers'), value: 847, icon: '👥' },
-    { label: t('admin.activeUsers'), value: 42, icon: '🟢' },
-    { label: t('admin.registrationsToday'), value: 12, icon: '📝' },
-    { label: 'Matches Today', value: 28, icon: '💕' },
+  const [stats, setStats] = useState([
+    { label: t('admin.totalUsers'), value: '—', icon: '👥' },
+    { label: t('admin.activeUsers'), value: '—', icon: '🟢' },
+    { label: t('admin.registrationsToday'), value: '—', icon: '📝' },
+    { label: 'Matches Today', value: '—', icon: '💕' },
   ]);
   const [activeTab, setActiveTab] = useState<'weekly' | 'monthly'>('weekly');
-  const [users] = useState<UserRow[]>([
-    { id: 'u1', username: 'Алексей', email: 'aleksey@example.com', gender: 'М', language: 'RU', premium: true, joined: '2025-01-15' },
-    { id: 'u2', username: '小明', email: 'xiaoming@example.com', gender: 'М', language: 'ZH', premium: false, joined: '2025-03-20' },
-    { id: 'u3', username: 'Анна', email: 'anna@example.com', gender: 'Ж', language: 'RU', premium: true, joined: '2025-02-10' },
-    { id: 'u4', username: '小芳', email: 'xiaofang@example.com', gender: 'Ж', language: 'ZH', premium: false, joined: '2025-04-05' },
-    { id: 'u5', username: 'Dmitry', email: 'dmitry@example.com', gender: 'М', language: 'EN', premium: true, joined: '2025-05-01' },
-    { id: 'u6', username: '丽华', email: 'lihua@example.com', gender: 'Ж', language: 'ZH', premium: false, joined: '2025-06-15' },
-    { id: 'u7', username: 'Elena', email: 'elena@example.com', gender: 'Ж', language: 'RU', premium: false, joined: '2025-07-01' },
-    { id: 'u8', username: '伟强', email: 'weiqiang@example.com', gender: 'М', language: 'ZH', premium: true, joined: '2025-08-10' },
-  ]);
+  const [weeklyData, setWeeklyData] = useState<number[]>([4, 6, 3, 8, 5, 7, 4]);
+  const [monthlyData, setMonthlyData] = useState<number[]>([30, 45, 28, 55, 38, 50, 42, 60, 35, 65, 48, 58]);
+  const [users, setUsers] = useState<any[]>([]);
 
-  const weeklyData = [5, 8, 3, 12, 7, 9, 4];
-  const monthlyData = [42, 58, 35, 72, 48, 63, 55, 70, 45, 82, 68, 77];
+  useEffect(() => {
+    loadStats();
+  }, []);
 
-  const maxVal = Math.max(...(activeTab === 'weekly' ? weeklyData : monthlyData));
+  const loadStats = async () => {
+    try {
+      const data = await api.getAdminStats();
+      setStats([
+        { label: t('admin.totalUsers'), value: data.totalUsers ?? '—', icon: '👥' },
+        { label: t('admin.activeUsers'), value: data.activeUsers ?? '—', icon: '🟢' },
+        { label: t('admin.registrationsToday'), value: data.registrationsToday ?? '—', icon: '📝' },
+        { label: 'Matches Today', value: data.matchesToday ?? '—', icon: '💕' },
+      ]);
+      if (data.registrationsWeekly) setWeeklyData(data.registrationsWeekly);
+      if (data.registrationsMonthly) setMonthlyData(data.registrationsMonthly);
+    } catch { /* use defaults */ }
+    try {
+      const userList = await api.getAdminUsers();
+      setUsers(userList);
+    } catch { /* no users yet */ }
+  };
+
+  const chartData = activeTab === 'weekly' ? weeklyData : monthlyData;
+  const maxVal = Math.max(...chartData, 1);
 
   return (
     <Layout>
@@ -69,31 +64,13 @@ export default function Admin() {
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 'var(--space-md)' }}>
           <h3 className="section-title" style={{ marginBottom: 0 }}>📊 {t('admin.registrations')}</h3>
           <div className="tab-bar" style={{ width: 'auto' }}>
-            <button
-              className={`tab-item ${activeTab === 'weekly' ? 'active' : ''}`}
-              onClick={() => setActiveTab('weekly')}
-            >
-              {t('admin.weekly')}
-            </button>
-            <button
-              className={`tab-item ${activeTab === 'monthly' ? 'active' : ''}`}
-              onClick={() => setActiveTab('monthly')}
-            >
-              {t('admin.monthly')}
-            </button>
+            <button className={`tab-item ${activeTab === 'weekly' ? 'active' : ''}`} onClick={() => setActiveTab('weekly')}>{t('admin.weekly')}</button>
+            <button className={`tab-item ${activeTab === 'monthly' ? 'active' : ''}`} onClick={() => setActiveTab('monthly')}>{t('admin.monthly')}</button>
           </div>
         </div>
-
-        {/* Chart bars */}
         <div style={{ display: 'flex', alignItems: 'flex-end', gap: 4, height: 120, paddingTop: 8 }}>
-          {(activeTab === 'weekly' ? weeklyData : monthlyData).map((val, i) => (
-            <div key={i} style={{
-              flex: 1,
-              display: 'flex',
-              flexDirection: 'column',
-              alignItems: 'center',
-              gap: 4,
-            }}>
+          {chartData.map((val, i) => (
+            <div key={i} style={{ flex: 1, display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 4 }}>
               <div style={{
                 width: '100%',
                 height: `${(val / maxVal) * 100}%`,
@@ -103,9 +80,7 @@ export default function Admin() {
                 transition: 'height 0.5s ease',
                 opacity: 0.9,
               }} />
-              <span style={{ fontSize: '10px', color: 'var(--color-textSecondary)' }}>
-                {i + 1}
-              </span>
+              <span style={{ fontSize: '10px', color: 'var(--color-textSecondary)' }}>{i + 1}</span>
             </div>
           ))}
         </div>
@@ -114,35 +89,36 @@ export default function Admin() {
       {/* Users Table */}
       <div className="card" style={{ marginBottom: 'var(--space-lg)' }}>
         <h3 className="section-title">👤 {t('admin.usersList')}</h3>
-        <div className="table-wrap">
-          <table>
-            <thead>
-              <tr>
-                <th>{t('admin.username')}</th>
-                <th>{t('admin.email')}</th>
-                <th>{t('admin.gender')}</th>
-                <th>{t('admin.language')}</th>
-                <th>{t('admin.premium')}</th>
-              </tr>
-            </thead>
-            <tbody>
-              {users.map(u => (
-                <tr key={u.id}>
-                  <td style={{ fontWeight: 500 }}>{u.username}</td>
-                  <td style={{ fontSize: 'var(--font-size-xs)', color: 'var(--color-textSecondary)' }}>{u.email}</td>
-                  <td>{u.gender}</td>
-                  <td>{u.language}</td>
-                  <td>
-                    {u.premium
-                      ? <span className="badge badge-warning">⭐</span>
-                      : <span className="badge">—</span>
-                    }
-                  </td>
+        {users.length === 0 ? (
+          <p style={{ color: 'var(--color-textSecondary)', textAlign: 'center', padding: 'var(--space-lg)', fontSize: 'var(--font-size-sm)' }}>
+            {t('admin.noUsers')}
+          </p>
+        ) : (
+          <div className="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>{t('admin.username')}</th>
+                  <th>{t('admin.email')}</th>
+                  <th>{t('admin.gender')}</th>
+                  <th>{t('admin.language')}</th>
+                  <th>{t('admin.premium')}</th>
                 </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
+              </thead>
+              <tbody>
+                {users.map((u: any) => (
+                  <tr key={u.id || u.email}>
+                    <td style={{ fontWeight: 500 }}>{u.username}</td>
+                    <td style={{ fontSize: 'var(--font-size-xs)', color: 'var(--color-textSecondary)' }}>{u.email}</td>
+                    <td>{u.gender === 'male' ? 'М' : u.gender === 'female' ? 'Ж' : u.gender}</td>
+                    <td>{(u.preferred_language || '').toUpperCase()}</td>
+                    <td>{u.is_premium ? <span className="badge badge-warning">⭐</span> : <span className="badge">—</span>}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        )}
       </div>
     </Layout>
   );
